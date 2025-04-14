@@ -4,6 +4,7 @@ out = "out"
 libs = ["lib"]
 solc_version = "0.8.20"
 evm_version = "shanghai"
+remappings = ["@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"]
 
 [rpc_endpoints]
 sepolia = "${SEPOLIA_RPC_URL}"
