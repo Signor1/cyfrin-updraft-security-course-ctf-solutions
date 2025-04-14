@@ -29,17 +29,10 @@ contract S1Test is Test {
         bytes memory inputData = s1SolutionHelper.returnInputData(address(s1Helper));
 
         // Mock registry behavior
-        vm.mockCall(
-            registry,
-            abi.encodeWithSelector(ICTFRegistry.mintNft.selector, user, ""),
-            abi.encode(1)
-        );
+        vm.mockCall(registry, abi.encodeWithSelector(ICTFRegistry.mintNft.selector, user, ""), abi.encode(1));
 
         // Expect the call to mintNft
-        vm.expectCall(
-            registry,
-            abi.encodeWithSelector(ICTFRegistry.mintNft.selector, user, "")
-        );
+        vm.expectCall(registry, abi.encodeWithSelector(ICTFRegistry.mintNft.selector, user, ""));
 
         // Call solveChallenge
         vm.prank(user);
