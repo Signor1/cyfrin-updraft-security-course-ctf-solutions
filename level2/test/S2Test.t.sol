@@ -13,7 +13,6 @@ contract S2Test is Test {
 
     function setUp() public {
         s2 = new S2(registry);
-        vm.prank(user);
     }
 
     function testSolveChallenge() public {
@@ -32,9 +31,12 @@ contract S2Test is Test {
 
         // Call solveChallenge with weCallItSecurityReview = true
         vm.prank(user);
+
         // @param weCallItSecurityReview: boolean
         // @param yourTwitterHandle: string (optional)
         // the boolean value here is `true` because the correct answer is "security review" and not "security audit"
+
+        // weCallItSecurityReview = true
         s2.solveChallenge(true, "");
     }
 
