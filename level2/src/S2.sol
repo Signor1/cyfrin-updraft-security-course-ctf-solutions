@@ -8,10 +8,7 @@ contract S2 is Challenge {
 
     constructor(address registry) Challenge(registry) {}
 
-    function solveChallenge(
-        bool weCallItSecurityReview,
-        string memory yourTwitterHandle
-    ) external {
+    function solveChallenge(bool weCallItSecurityReview, string memory yourTwitterHandle) external {
         if (!weCallItSecurityReview) {
             revert S2__WrongValue();
         }

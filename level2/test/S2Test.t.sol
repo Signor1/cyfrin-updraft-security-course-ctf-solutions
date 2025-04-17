@@ -17,17 +17,10 @@ contract S2Test is Test {
 
     function testSolveChallenge() public {
         // Mock registry behavior
-        vm.mockCall(
-            registry,
-            abi.encodeWithSelector(ICTFRegistry.mintNft.selector, user, ""),
-            abi.encode(1)
-        );
+        vm.mockCall(registry, abi.encodeWithSelector(ICTFRegistry.mintNft.selector, user, ""), abi.encode(1));
 
         // Expect the call to mintNft
-        vm.expectCall(
-            registry,
-            abi.encodeWithSelector(ICTFRegistry.mintNft.selector, user, "")
-        );
+        vm.expectCall(registry, abi.encodeWithSelector(ICTFRegistry.mintNft.selector, user, ""));
 
         // Call solveChallenge with weCallItSecurityReview = true
         vm.prank(user);

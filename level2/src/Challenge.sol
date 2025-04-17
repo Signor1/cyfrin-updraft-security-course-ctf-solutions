@@ -19,15 +19,11 @@ abstract contract Challenge is IChallenge, Ownable {
         i_registry = ICTFRegistry(registry);
     }
 
-    function _updateAndRewardSolver(
-        string memory twitterHandleOfSolver
-    ) internal {
+    function _updateAndRewardSolver(string memory twitterHandleOfSolver) internal {
         ICTFRegistry(i_registry).mintNft(msg.sender, twitterHandleOfSolver);
     }
 
-    function extraDescription(
-        address /* user */
-    ) external view virtual returns (string memory) {
+    function extraDescription(address /* user */ ) external view virtual returns (string memory) {
         return BLANK_SPECIAL_DESCRIPTION;
     }
 }
